@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>print page mini project base on java script</title>
+</head>
+
+<body>
+    <div id="divone">
+        <h1>Taiyeb id older than me</h1>
+         <button onclick="myfun('divone')">Print line</button>
+    </div>
+<br>
+<hr>
+    <div id="divtwo">
+       <h2> subhan is older than abdul..</h2>
+        <button onclick="myfun('divtwo')"> Print line</button>
+    </div>
+    <br>
+<hr>
+    <div id="divthree">
+        <h3> Abdul is smaller</h3>
+         <button onclick="myfun('divthree')"> Print line</button>
+     </div>
+     <br>
+     <hr>
+    <button onclick="page()">Print page</button>
+
+    <script>
+        function page() {
+            window.print()  //document.body.innerHTML;
+        }
+
+        function myfun(printPage) {
+            var backup = document.body.innerHTML;
+            var content = document.getElementById(printPage).innerHTML;
+            document.body.innerHTML = content;
+            window.print()
+            document.body.innerHTML = backup;
+        }
+    </script>
+</body>
+
+</html>
